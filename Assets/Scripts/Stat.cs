@@ -1,3 +1,5 @@
+using UnityEditor;
+
 public class Stat
 {
     private string name;
@@ -24,6 +26,11 @@ public class Stat
 
     public string GetName() {
         return this.name;
+    }
+
+    public int GetLevel() {
+        var (level, _remainder) = this.GetLevelAndRemainder();
+        return level;
     }
 
     public (int, int) GetLevelAndRemainder() {
